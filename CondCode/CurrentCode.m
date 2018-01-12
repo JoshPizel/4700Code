@@ -77,7 +77,8 @@ ylabel('Resistance');
 
 AveCurr = mean(Res');
 StdCurr = std(Res');
-
+%github test stuff
+disp('typical change here')
 subplot(4, 1, 3), plot(Max, AveCurr);
 hold on
 subplot(4, 1, 3), plot(Max, AveCurr - StdCurr, 'r');
