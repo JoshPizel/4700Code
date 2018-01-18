@@ -10,7 +10,7 @@ else
     Mass = Mass1;
 end
 
-L = (2*rad - 1) * AtomSpacing;
+L = (2*rad - 1) * AtomSpacing*1.2;
 W = (2*rad - 1) * AtomSpacing;
 
 xp(1, :) = linspace(-L/2, L/2, 2*rad);

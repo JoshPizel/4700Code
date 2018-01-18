@@ -44,12 +44,11 @@ ScaleF = 0;
 % InitCirc
 % InitBlock0
 % InitBlock0FD
-% InitVStream
+InitVStream
 % InitHCP
 % InitHCPBlob
 % InitVStreamHCP
 % InitHCPMeltSim
-initTriangle
 
 MaxX = max(x) * 1.5;
 MinX = min(x) * 1.5;
