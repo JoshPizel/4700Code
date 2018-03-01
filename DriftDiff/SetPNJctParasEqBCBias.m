@@ -9,12 +9,21 @@ x =linspace(0,l,nx);
 dx = x(2)-x(1);
 xm = x(1:nx-1) + 0.5*dx;
 
-ni = x < l/2;
-pi = x >= l/2;
+ni = x < 8/20*l;
+jit1 = x >=8/20*l;
+jit2 = x <12/20*l;
+ji = jit1&jit2;
+pi = x >= 12/20*l;
+
+num = sum(ji);
 
 Nd = 4e16 * 1e6; % Const. 1/cm3 (100 cm/m)^3
 Na = 1e16 * 1e6;
+
+f =linspace(Nd,-Na,num);
+g =linspace(1,num,num).*f;
 NetDoping(ni) = Nd;
+NetDoping(ji) = g;
 NetDoping(pi) = -Na;
 
 x0 = l/2;
@@ -36,11 +45,11 @@ Wp = (W - Wn);
 LVbc = Phi;
 
 PlotSS = 0;
-PlotYAxis = {[0 Phi+0.1] [0e5 40e5] [-20e2 40e2]...
-    [0e21 2.5e22] [0 1.1e22] [0 20e43]...
-    [-5e33 5e33] [-5e33 5e33] [-0e8 3e8] ...
-    [1e-3 1e8] [-3e6 1e6] [0 2.5e22]};
-doPlotImage = 1;
+% PlotYAxis = {[0 Phi+0.1] [0e5 40e5] [-20e2 40e2]...
+%     [0e21 2.5e22] [0 1.1e22] [0 20e43]...
+%     [-5e33 5e33] [-5e33 5e33] [-0e8 3e8] ...
+%     [1e-3 1e8] [-3e6 1e6] [0 2.5e22]};
+doPlotImage = 0;
 
 SecondSim = 1;
 LVbc2 = Phi-0.3;
